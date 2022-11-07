@@ -852,8 +852,8 @@ def http_crawler(task, domain, yaml_configuration, results_dir, activity_id, thr
 				endpoint.is_default = True
 				endpoint.save()
 				subdomain.save()
-				if 'technologies' in json_st:
-					for _tech in json_st['technologies']:
+				if 'tech' in json_st:
+					for _tech in json_st['tech']:
 						if Technology.objects.filter(name=_tech).exists():
 							tech = Technology.objects.get(name=_tech)
 						else:
