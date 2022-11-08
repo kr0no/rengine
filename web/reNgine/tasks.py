@@ -1661,8 +1661,8 @@ def fetch_endpoints(
 						response_time = response_time / 1000
 					endpoint.response_time = response_time
 				endpoint.save()
-				if 'technologies' in json_st:
-					for _tech in json_st['technologies']:
+				if 'tech' in json_st:
+					for _tech in json_st['tech']:
 						if Technology.objects.filter(name=_tech).exists():
 							tech = Technology.objects.get(name=_tech)
 						else:
